@@ -1,0 +1,544 @@
+{
+	"info": {
+		"_postman_id": "b5c4a426-92b5-4b77-b371-f8592c67afa4",
+		"name": "REST API “ Парфюмерный магазин”",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30932290"
+	},
+	"item": [
+		{
+			"name": "Регистрация",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"fio\": \"Иван Иванович Иванов\",\r\n \"phone\": \"+7 999 138 19 86\",\r\n \"email\": \"user@user.ru\",\r\n \"password\": \"paSSword1\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://k-esina.xn--80ahdri7a.site/api/users",
+					"protocol": "https",
+					"host": [
+						"k-esina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Аутентификация",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"user@user.ru\",\r\n    \"password\":\"paSSword1\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://k-esina.xn--80ahdri7a.site/api/login",
+					"protocol": "https",
+					"host": [
+						"k-esina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Личный кабинет",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O7te5YJyLv2NFGPFAtpnM1YtEu0fSVOw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer oadxy2e2dzMjRTgbXeVykpxVS0WLcEm-",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://k-esina.xn--80ahdri7a.site/api/user",
+					"protocol": "https",
+					"host": [
+						"k-esina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Информация о пользователях, для администратора",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eXzS5WSTiCpu_D05ucY6HS58wg4FwO_A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer IGIbgZ-gXulf43gKgrTdApmvdOd0ZL8-",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://k-esina.xn--80ahdri7a.site/api/admin/users",
+					"protocol": "https",
+					"host": [
+						"k-esina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"admin",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Заказы, созданные пользователем",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "oEsNB3IJY_gWRx3_-jVjto-N-APHigEL",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://k-esina.xn--80ahdri7a.site/api/orders",
+					"protocol": "https",
+					"host": [
+						"k-esina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Информация по одному парфюму ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://k-esina.xn--80ahdri7a.site/api/perfume/1",
+					"protocol": "https",
+					"host": [
+						"k-esina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"perfume",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Каталог  парфюмов",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://k-esina.xn--80ahdri7a.site/api/perfumes",
+					"protocol": "https",
+					"host": [
+						"k-esina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"perfumes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление товара в корзину ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O7te5YJyLv2NFGPFAtpnM1YtEu0fSVOw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer oEsNB3IJY_gWRx3_-jVjto-N-APHigEL",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product_id\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://k-esina.xn--80ahdri7a.site/api/cart",
+					"protocol": "https",
+					"host": [
+						"k-esina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление одной штуки товара из корзины",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O7te5YJyLv2NFGPFAtpnM1YtEu0fSVOw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://k-esina.xn--80ahdri7a.site/api/cart/one/1",
+					"protocol": "https",
+					"host": [
+						"k-esina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"cart",
+						"one",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление всего товара из корзины ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O7te5YJyLv2NFGPFAtpnM1YtEu0fSVOw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://k-esina.xn--80ahdri7a.site/api/cart/all/1",
+					"protocol": "https",
+					"host": [
+						"k-esina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"cart",
+						"all",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Просмотр корзины",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O7te5YJyLv2NFGPFAtpnM1YtEu0fSVOw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://k-esina.xn--80ahdri7a.site/api/cart",
+					"protocol": "https",
+					"host": [
+						"k-esina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Оформление заказа",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "O7te5YJyLv2NFGPFAtpnM1YtEu0fSVOw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer oEsNB3IJY_gWRx3_-jVjto-N-APHigEL",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Иван Иванович Иванов\",\r\n    \"phone\":\"+7 999 138 19 86\",\r\n    \"address\":\"ул. Пушкина, д. 10, кв. 5\",\r\n    \"payment_method\":\"Банковская карта\",\r\n    \"comment\":\"Доставить к вечеру\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://k-esina.xn--80ahdri7a.site/api/orders",
+					"protocol": "https",
+					"host": [
+						"k-esina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление нового парфюма",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eXzS5WSTiCpu_D05ucY6HS58wg4FwO_A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Montale Soleil de Capri Eau de Parfum",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Бодрящий коктейль с итальянскими фруктами, солнечным грейпфрутом и экзотическим кумкватом, приправленный средиземноморскими специями.",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "10625",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "fragrance_group",
+							"value": "цветочные, фруктовые",
+							"type": "text"
+						},
+						{
+							"key": "base_notes",
+							"value": "ваниль, тоффи, амбра, мускус",
+							"type": "text"
+						},
+						{
+							"key": "volume",
+							"value": "100",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/X:/#практика/coffe/coffe/Resources/pct1.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://k-esina.xn--80ahdri7a.site/api/admin/perfume",
+					"protocol": "https",
+					"host": [
+						"k-esina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"admin",
+						"perfume"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Изменение парфюма",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eXzS5WSTiCpu_D05ucY6HS58wg4FwO_A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/X:/#практика/coffe/coffe/Resources/pct1.png"
+						},
+						{
+							"key": "name",
+							"value": "Montale Soleil de Capri Eau de Parfum",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://k-esina.xn--80ahdri7a.site/api/admin/perfume/5",
+					"protocol": "https",
+					"host": [
+						"k-esina",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"admin",
+						"perfume",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
